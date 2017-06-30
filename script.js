@@ -1,24 +1,29 @@
-window.onload = function () {
-    setInterval(function () {
-        date = new Date();
-        h = date.getHours();
-        m = date.getMinutes();
-        h = (h < 10) ? '0' + h : h;
-        m = (m < 10) ? '0' + m : m;
-        s = date.getSeconds();
-        s = (s < 10) ? '0' + s : s;
-        document.getElementById('time')
-            .innerHTML = h + ' : ' + m;
-        document.getElementById('second')
-            .innerHTML = ' : ' + s;
-    }, 1000);
-    var a = document.getElementById('clock');
+setInterval(function () {
+    var date = new Date();
+    var h = date.getHours();
+    var m = date.getMinutes();
+    var s = date.getSeconds();
+    h = (h < 10) ? '0' + h : h;
+    m = (m < 10) ? '0' + m : m;
+    s = (s < 10) ? '0' + s : s;
 
-    function handler1() {
-        second.style.display = (second.style.display == 'none') ? '' : 'none';
+    document.getElementById('time').innerHTML = h + ' : ' + m;
+    document.getElementById('second').innerHTML = ' : ' + s;
+}, 1000);
+
+function toggleСlock() {
+    var obj = document.getElementById('second');
+
+    if (obj.style.display != "inline") {
+        obj.style.display = "inline";
+    } else {
+        obj.style.display = "none";
     }
-    a.addEventListener('click', handler1);
 }
+
+var a = document.getElementById('clock');
+
+a.addEventListener('click', toggleСlock);
 
 function sum(x) {
 
@@ -32,10 +37,9 @@ console.log(sum(1)(2));
 
 var a = 5; //нужно поставить точку с запятой, так как интерпретатор воспринимает эту запись как function Expression, без перевода строки.
 
-(function() {
+(function () {
     alert(a);
 })()
-
 
 //for (var i = 0; i < 10; i++) {  к моменту запуска счетчика в функции цикл уже отработал, поэтому в консоль каждый раз записываеться значение последнего элемента массива цикла.
 //    setTimeout(function() {
