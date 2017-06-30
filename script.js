@@ -1,14 +1,19 @@
-setInterval(function () {
-    var date = new Date();
+function makeClock() {
+	var date = new Date();
     var h = date.getHours();
     var m = date.getMinutes();
     var s = date.getSeconds();
+	
     h = (h < 10) ? '0' + h : h;
     m = (m < 10) ? '0' + m : m;
     s = (s < 10) ? '0' + s : s;
-
+	
     document.getElementById('time').innerHTML = h + ' : ' + m;
     document.getElementById('second').innerHTML = ' : ' + s;
+}
+
+setInterval(function () {
+	makeClock();
 }, 1000);
 
 function toggleСlock() {
@@ -47,8 +52,11 @@ var a = 5; //нужно поставить точку с запятой, так 
 //    }, 0);
 //}
 
-setTimeout(function () {
-    for (var i = 0; i < 10; i++) {
-        console.log(i + 1);
-    }
-}, 0);
+for (var i = 0; i < 10; i++) {
+    (function () {
+        var index = i;
+        setTimeout(function () {
+            console.log(index + 1);
+        }, 0);
+    })();
+}
