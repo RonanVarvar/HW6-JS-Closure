@@ -1,17 +1,18 @@
-function makeClock() {
+function getTime() {
     var date = new Date();
     var h = date.getHours();
     var m = date.getMinutes();
     var s = date.getSeconds();
 
-    h = (h < 10) ? '0' + h : h;
-    m = (m < 10) ? '0' + m : m;
-    s = (s < 10) ? '0' + s : s;
+    this.h = (h < 10) ? '0' + h : h;
+    this.m = (m < 10) ? '0' + m : m;
+    this.s = (s < 10) ? '0' + s : s;
+}
 
-    document.getElementById('time')
-        .innerHTML = h + ' : ' + m;
-    document.getElementById('second')
-        .innerHTML = ' : ' + s;
+function makeClock() {
+    getTime();
+    document.getElementById('time').innerHTML = this.h + ' : ' + this.m;
+    document.getElementById('second').innerHTML = ' : ' + this.s;
 }
 
 setInterval(function () {
@@ -37,7 +38,8 @@ function sum(x) {
         return x + y;
     };
 }
-console.log(sum(1)(2));
+
+console.log( sum(1)(2) );
 
 var a = 5; //нужно поставить точку с запятой, так как интерпретатор воспринимает эту запись как function Expression, без перевода строки.
 
