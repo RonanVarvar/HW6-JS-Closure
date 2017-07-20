@@ -9,14 +9,15 @@ function getTime() {
     this.s = (s < 10) ? '0' + s : s;
 }
 
-function makeClock() {
+function setClock() {
     getTime();
+
     document.getElementById('time').innerHTML = this.h + ' : ' + this.m;
     document.getElementById('second').innerHTML = ' : ' + this.s;
 }
 
 setInterval(function () {
-    makeClock();
+    setClock();
 }, 1000);
 
 function toggleСlock() {
@@ -39,7 +40,7 @@ function sum(x) {
     };
 }
 
-console.log( sum(1)(2) );
+console.log(sum(1)(2));
 
 var a = 5; //нужно поставить точку с запятой, так как интерпретатор воспринимает эту запись как function Expression, без перевода строки.
 
