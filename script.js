@@ -23,7 +23,7 @@ setInterval(function () {
 function toggleСlock() {
     var obj = document.getElementById('second');
 
-    if (obj.style.display != "inline") {
+    if (obj.style.display !== "inline") {
         obj.style.display = "inline";
     } else {
         obj.style.display = "none";
