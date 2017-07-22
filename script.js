@@ -57,6 +57,7 @@ var a = 5; //нужно поставить точку с запятой, так 
 for (var i = 0; i < 10; i++) {
     (function () {
         var index = i;
+
         setTimeout(function () {
             console.log(index + 1);
         }, 0);
